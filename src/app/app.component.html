@@ -1,9 +1,29 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Courses are: 
+    All Courses
   </h1>
-  <div *ngFor="let course of courses">
-      <p>{{course.name}}</p>
+  <div>
+    <button type="button" class="btn btn-primary" click='openAddBox()'>Add course</button>
+    <button type="button" class="btn btn-success" click='refreshList();$event.target.blur()'>Refresh List</button>
+  </div>
+  <router-outlet></router-outlet>
+  <div class="mat-elevation-z8">
+    <table class="table table-inverse">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Course Type</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="contentRows" *ngFor="let course of courses" (click)='openEditBox(course)'>
+          <td>{{course.name}}</td>
+          <td>{{course.course_type}}</td>
+          <td>{{course.price}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
