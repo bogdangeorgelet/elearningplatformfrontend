@@ -7,11 +7,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { CourseComponent } from './course/course.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CourseComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -19,12 +23,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        component: AppComponent
-      }
-    ])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

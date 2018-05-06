@@ -1,0 +1,110 @@
+<div [ngClass] = 'classes' style="text-align:center">
+  <h1>All Courses</h1>
+  <div>
+    <button type="button" class="btn btn-primary" (click)='openAddBox()'>Add course</button>
+    <button type="button" class="btn btn-success" (click)='refreshList();$event.target.blur()'>Refresh List</button>
+  </div>
+  <router-outlet></router-outlet>
+  <div class="mat-elevation-z8">
+    <table class="table table-inverse course-list">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Course Type</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="contentRows" *ngFor="let course of courses" (click)='openEditBox(course)'>
+          <td>{{course.name}}</td>
+          <td>{{course.course_type}}</td>
+          <td>{{course.price}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="courseModal" *ngIf="showEditBox">
+  <div class="row" style="padding-top: 5%">
+    <div class="col-2">
+      <div class="col-8">
+        <div class="row">
+          <div class="container">
+            <form autocomplete="off" spellcheck="false">
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" [(ngModel)]='modalCourse.name' name="name">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput3">Course Type</label>
+                <input type="text" class="form-control" id="formGroupExampleInput3" [(ngModel)]='modalCourse.course_type' name="course_type">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput4">Price</label>
+                <input type="text" class="form-control" id="formGroupExampleInput4" [(ngModel)]='modalCourse.price' name="price">
+              </div>
+              <div class="row text-center pt-4">
+                <div class="col-4">
+                  <button type="button" class="btn btn-primary" (click)='updateCourse(modalCourse.id, modalCourse)'>Apply Changes</button>
+                </div>
+                <div class="col-4">
+                  <button type="button" class="btn btn-success" (click)='closeEditbox()'>Cancel</button>
+                </div>
+                <div class="col-4">
+                  <button type="button" class="btn btn-danger" (click)='deleteCourse(modalCourse.id)'>Delete</button>
+                </div>
+              </div>
+              <div class="row text-center pt-3"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="courseModal" *ngIf='showAddBox'>
+  <div class="row" style="padding-top: 5%">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="row" style="display: block">
+        <div class="container">
+          <form autocomplete="off" spellcheck="false">
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Name</label>
+              <input type="text" class="form-control" [(ngModel)]='modalCourse.name' name="name">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput3">Course Type</label>
+              <input type="text" class="form-control" [(ngModel)]='modalCourse.course_type' name="course_type">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput4">Price</label>
+              <input type="text" class="form-control" [(ngModel)]='modalCourse.price' name="price">
+            </div>
+            <div class="row text-center pt-4">
+              <div class="col-6">
+                <button type="button" class="btn btn-primary" (click)="addCourse()">Add Course</button>
+              </div>
+              <div class="col-6">
+                <button type="button" class="btn btn-success" (click)="closeAddBox">Cancel</button>
+              </div>
+            </div>
+            <div class="row text-center pt-3"></div>
+          </form>
+
+          <div *ngIf='error' class="text-center">
+            <p>
+              <ngb-alert type='danger' [dismissible]='true' (close)='closeAlert()'>
+                <strong>Error!</strong> {{errorMessage}}
+              </ngb-alert>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
