@@ -1,0 +1,9 @@
+.course-list th {
+    text-align: center;
+}
+
+.course-list {
+    width: 60%;
+    margin-left: 15px;
+    margin-top: 25px;
+}
