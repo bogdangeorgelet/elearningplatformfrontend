@@ -9,13 +9,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { CourseComponent } from './course/course.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { CustomerComponent } from './customer/customer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+.customers-list th {
+    text-align: center;
+}
+
+.customers-list {
+    width: 60%;
+    margin-left: 15px;
+    margin-top: 25px;
+}
