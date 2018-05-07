@@ -56,7 +56,11 @@
               </div>
               <div class="form-group">
                 <label for="formGrupExampleInput">Address</label>
-                <input type="text" class="form-control" id="formGrupExampleInput5" [(ngModel)]='modalCustomer.fullName' name="address">
+                <input type="text" class="form-control" id="formGrupExampleInput5" [(ngModel)]='modalCustomer.address' name="address">
+              </div>
+              <div class="form-group">
+                <label for="formGrupExampleInput6">Phone Number</label>
+                <input type="text" class="form-control" id="formGrupExampleInput6" [(ngModel)]='modalCustomer.phoneNumber' name="phoneNumber">
               </div>
               <div class="row text-center pt-4">
                 <div class="col-4">
@@ -71,6 +75,63 @@
                 <div class="row text-center pt-3"></div>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="customerModal" *ngIf="showAddBox">
+  <div class="row" style="padding-top: 5%">
+    <div class="col-2">
+      <div class="col-8">
+        <div class="row">
+          <div class="container">
+            <form autocomplete="off" spellcheck="false">
+              <div class="form-group">
+                <label for="formGrupExampleInput">Fullname</label>
+                <input type="text" class="form-control" id="formGrupExampleInput" [(ngModel)]='modalCustomer.fullName' name="fullName">
+              </div>
+              <div class="form-group">
+                <label for="formGrupExampleInput2">Username</label>
+                <input type="text" class="form-control" id="formGrupExampleInput2" [(ngModel)]='modalCustomer.username' name="username">
+              </div>
+              <div class="form-group">
+                <label for="formGrupExampleInput3">Password</label>
+                <input type="text" class="form-control" id="formGrupExampleInput3" [(ngModel)]='modalCustomer.password' name="password">
+              </div>
+              <div class="form-group">
+                <label for="formGrupExampleInput4">Email</label>
+                <input type="text" class="form-control" id="formGrupExampleInput4" [(ngModel)]='modalCustomer.email' name="email">
+              </div>
+              <div class="form-group">
+                <label for="formGrupExampleInput5">Address</label>
+                <input type="text" class="form-control" id="formGrupExampleInput5" [(ngModel)]='modalCustomer.address' name="address">
+              </div>
+              <div class="form-group">
+                <label for="formGrupExampleInput6">Phone Number</label>
+                <input type="text" class="form-control" id="formGrupExampleInput6" [(ngModel)]='modalCustomer.phoneNumber' name="phoneNumber">
+              </div>
+              <div class="row text-center pt-4">
+                <div class="col-6">
+                  <button type="button" class="btn btn-primary" (click)='addCustomer()'>Add Customer</button>
+                </div>
+                <div class="col-6">
+                  <button type="button" class="btn btn-success" (click)='closeAddBox()'>Cancel</button>
+                </div>
+                <div class="row text-center pt-3"></div>
+              </div>
+            </form>
+
+            <div *ngIf='error' class="text-center">
+              <p>
+                <ngb-alert type='danger' [dismissible]='true' (close)='closeAlert()'>
+                  <strong>Error!</strong> {{errorMessage}}
+                </ngb-alert>
+              </p>
+            </div>
+
           </div>
         </div>
       </div>

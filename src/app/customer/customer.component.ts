@@ -90,7 +90,7 @@ export class CustomerComponent implements OnInit {
       'address' : updatedCustomer.address,
       'phoneNumber' : updatedCustomer.phoneNumber
     };
-    this.http.post(this.hostUrl + '/' + id, body).subscribe(data => {
+    this.http.put(this.hostUrl + '/' + id, body).subscribe(data => {
       this.closeEditBox();
       this.refreshList();
     })
