@@ -40,7 +40,7 @@ export class InstructorsComponent implements OnInit {
   openAddBox() {
     this.showAddBox = true;
     this.error = false;
-    this.classes = 'blurred';+
+    this.classes = 'blurred';
     this.modalInstructor.id = '';
     this.modalInstructor.firstName = '';
     this.modalInstructor.lastName = '';
