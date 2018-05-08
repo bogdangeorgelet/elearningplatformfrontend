@@ -9,22 +9,20 @@
     <table class="table table-inverse customers-list">
       <thead>
         <tr>
-          <th>Fullname</th>
-          <th>Username</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
           <th>Password</th>
           <th>Email</th>
-          <th>Address</th>
-          <th>Phone Number</th>
+          <th>Date Created</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="contentRows" *ngFor="let customer of customers" (click)="openEditBox(customer)">
-          <td>{{customer.fullName}}</td>
-          <td>{{customer.username}}</td>
-          <td>{{customer.password}}</td>
-          <td>{{customer.email}}</td>
-          <td>{{customer.address}}</td>
-          <td>{{customer.phoneNumber}}</td>
+        <tr class="contentRows" *ngFor="let instructor of instructors" (click)="openEditBox(instructor)">
+          <td>{{instructor.firstName}}</td>
+          <td>{{instructor.lastName}}</td>
+          <td>{{instructor.password}}</td>
+          <td>{{instructor.email}}</td>
+          <td>{{instructor.dateCreated}}</td>
         </tr>
       </tbody>
     </table>
@@ -39,34 +37,34 @@
           <div class="container">
             <form autocomplete="off" spellcheck="false">
               <div class="form-group">
-                <label for="formGrupExampleInput">Fullname</label>
-                <input type="text" class="form-control" id="formGrupExampleInput" [(ngModel)]='modalCustomer.fullName' name="fullName">
+                <label for="formGrupExampleInput">Firstname</label>
+                <input type="text" class="form-control" id="formGrupExampleInput" [(ngModel)]='modalInstructor.firstName' name="firstName">
               </div>
               <div class="form-group">
-                <label for="formGrupExampleInput2">Username</label>
-                <input type="text" class="form-control" id="formGrupExampleInput2" [(ngModel)]='modalCustomer.username' name="username">
+                <label for="formGrupExampleInput2">Lastname</label>
+                <input type="text" class="form-control" id="formGrupExampleInput2" [(ngModel)]='modalInstructor.lastName' name="lastName">
               </div>
               <div class="form-group">
                 <label for="formGrupExampleInput3">Password</label>
-                <input type="text" class="form-control" id="formGrupExampleInput3" [(ngModel)]='modalCustomer.password' name="password">
+                <input type="text" class="form-control" id="formGrupExampleInput3" [(ngModel)]='modalInstructor.password' name="password">
               </div>
               <div class="form-group">
-                <label for="formGrupExampleInpu4t">Email</label>
-                <input type="text" class="form-control" id="formGrupExampleInput4" [(ngModel)]='modalCustomer.email' name="email">
+                <label for="formGrupExampleInput4">Email</label>
+                <input type="text" class="form-control" id="formGrupExampleInput4" [(ngModel)]='modalInstructor.email' name="email">
               </div>
               <div class="form-group">
-                <label for="formGrupExampleInput5">Address</label>
-                <input type="text" class="form-control" id="formGrupExampleInput5" [(ngModel)]='modalCustomer.fullName' name="address">
+                <label for="formGrupExampleInput5">Date Created</label>
+                <input type="text" class="form-control" id="formGrupExampleInput5" [(ngModel)]='modalInstructor.dateCreated' name="dateCreated">
               </div>
               <div class="row text-center pt-4">
                 <div class="col-4">
-                  <button type="button" class="btn btn-primary" (click)='updateCustomer(modalCustomer.id, modalCustomer)'>Apply Changes</button>
+                  <button type="button" class="btn btn-primary" (click)='updateInstructor(modalInstructor.id, modalInstructor)'>Apply Changes</button>
                 </div>
                 <div class="col-4">
                   <button type="button" class="btn btn-success" (click)='closeEditBox()'>Cancel</button>
                 </div>
                 <div class="col-4">
-                  <button type="button" class="btn btn-danger" (click)='deleteCustomer(modalCustomer.id)'>Delete</button>
+                  <button type="button" class="btn btn-danger" (click)='deleteInstructor(modalInstructor.id)'>Delete</button>
                 </div>
                 <div class="row text-center pt-3"></div>
               </div>

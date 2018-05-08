@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { CourseComponent } from './course/course.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CustomerComponent } from './customer/customer.component';
+import { InstructorsComponent } from './instructors/instructors.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CustomerComponent } from './customer/customer.component';
     AppComponent,
     CourseComponent,
     WelcomeComponent,
-    CustomerComponent
+    CustomerComponent,
+    InstructorsComponent
   ],
   imports: [
     BrowserModule,
