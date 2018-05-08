@@ -1,7 +1,7 @@
 <div ng-class="classes" style="text-align: center">
   <h1>All Customers</h1>
   <div>
-    <button type="button" class="btn btn-primary" (click)="openAddBox()">Add Customer</button>
+    <button type="button" class="btn btn-primary" (click)="openAddBox()">Add Instructor</button>
     <button type="button" class="btn btn-success" (click)="refreshList();$event.target.blur()">Refresh List</button>
   </div>
   <router-outlet></router-outlet>
@@ -105,7 +105,7 @@
               </div>
               <div class="row text-center pt-4">
                 <div class="col-4">
-                  <button type="button" class="btn btn-primary" (click)='updateInstructor()'>Apply Changes</button>
+                  <button type="button" class="btn btn-primary" (click)='addInstructor()'>Apply Changes</button>
                 </div>
                 <div class="col-4">
                   <button type="button" class="btn btn-success" (click)='closeEditBox()'>Cancel</button>
