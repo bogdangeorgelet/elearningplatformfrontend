@@ -23,14 +23,3 @@
     color:black;
   }
   
-  .instructorModal, .customerModal, courseModal {
-    width: 50%;
-    height: auto;
-    position: absolute;
-    left: 25%;
-    top: 25%;
-    z-index: 999;
-    border-radius: 25px;
-    border: solid 1px #aaa;
-    background-color: white;
-  }
