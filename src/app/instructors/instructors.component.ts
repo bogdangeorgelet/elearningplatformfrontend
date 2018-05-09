@@ -41,12 +41,12 @@ export class InstructorsComponent implements OnInit {
     this.showAddBox = true;
     this.error = false;
     this.classes = 'blurred';
-    this.modalInstructor.id = '';
-    this.modalInstructor.firstName = '';
-    this.modalInstructor.lastName = '';
-    this.modalInstructor.password = '';
-    this.modalInstructor.email = '';
-    this.modalInstructor.dateCreated = '';
+    this.instructors.id = '';
+    this.instructors.firstName = '';
+    this.instructors.lastName = '';
+    this.instructors.password = '';
+    this.instructors.email = '';
+    this.instructors.dateCreated = '';
   }
 
   closeAddBox() {
@@ -65,7 +65,7 @@ export class InstructorsComponent implements OnInit {
   }
 
   addInstructor() {
-    const url = `${this.hostUrl}/add`;
+    const url = `${this.hostUrl}`;
     this.error = false;
     const body = this.modalInstructor;
     this.http.post(url, body).subscribe(data => {
@@ -74,7 +74,7 @@ export class InstructorsComponent implements OnInit {
     },
     err => {
       this.error = true;
-      this.error = err.error.errorMessage;
+      this.errorMessage = err.error.message;
     })
   }
 

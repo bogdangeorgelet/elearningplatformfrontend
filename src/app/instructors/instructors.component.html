@@ -104,18 +104,22 @@
                 <input type="text" class="form-control" id="formGrupExampleInput5" [(ngModel)]='modalInstructor.dateCreated' name="dateCreated">
               </div>
               <div class="row text-center pt-4">
-                <div class="col-4">
-                  <button type="button" class="btn btn-primary" (click)='addInstructor()'>Apply Changes</button>
+                <div class="col-6">
+                  <button type="button" class="btn btn-primary" (click)='addInstructor()'>Add instructor</button>
                 </div>
-                <div class="col-4">
-                  <button type="button" class="btn btn-success" (click)='closeEditBox()'>Cancel</button>
-                </div>
-                <div class="col-4">
-                  <button type="button" class="btn btn-danger" (click)='deleteInstructor(modalInstructor.id)'>Delete</button>
+                <div class="col-6">
+                  <button type="button" class="btn btn-success" (click)='closeAddBox()'>Cancel</button>
                 </div>
                 <div class="row text-center pt-3"></div>
               </div>
             </form>
+            <div *ngIf='error' class="text-center">
+              <p>
+                <ngb-alert type='danger' [dismissible]='true' (close)='closeAlert()'>
+                  <strong>Error!</strong> {{errorMessage}}
+                </ngb-alert>
+              </p>
+            </div>
           </div>
         </div>
       </div>
