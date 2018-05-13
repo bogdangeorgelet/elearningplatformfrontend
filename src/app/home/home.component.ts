@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,11 @@ export class HomeComponent {
   greeting = {};
 
   constructor(private app: AppService, private http: HttpClient) {
-    http.get('http://localhost:8082').subscribe(data => this.greeting = data);
+    http.get('token').subscribe(data => {
+      const token = data['token'];
+      http.get('http://localhost:8082', {headers : new HttpHeaders().set('X-Auth-Token', token)})
+        .subscribe(response => this.greeting = response);
+    }, () => {});
   }
 
   authenticated() {
