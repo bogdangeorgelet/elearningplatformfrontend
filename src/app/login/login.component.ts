@@ -9,12 +9,12 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  
   credentials = {username: '', password: ''};
 
   constructor(private app: AppService, private http: HttpClient, private router: Router) {
-
   }
-
+  
   login() {
     this.app.authenticate(this.credentials, () => {
       this.router.navigateByUrl('/');

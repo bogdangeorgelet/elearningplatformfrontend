@@ -19,7 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 
 @Injectable()
-export class XhrIterceptor implements HttpInterceptor {
+export class XhrInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     const xhr = req.clone({
@@ -48,7 +48,7 @@ export class XhrIterceptor implements HttpInterceptor {
     NgbModule,
     AppRoutingModule
   ],
-  providers: [AppService, { provide: HTTP_INTERCEPTORS, useClass: XhrIterceptor, multi: true}],
+  providers: [AppService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

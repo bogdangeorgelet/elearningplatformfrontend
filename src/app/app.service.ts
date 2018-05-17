@@ -10,21 +10,19 @@ export class AppService {
 
   authenticate(credentials, callback) {
 
-    const headers = new HttpHeaders(credentials ? {
-            'content-type' : 'application/x-www-form-urlencoded'
+        const headers = new HttpHeaders(credentials ? {
+            authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
         } : {});
 
-        const params = new HttpParams()
-          .set('username', credentials['username'])
-          .set('password', credentials['password']);
-
-        this.http.post('login', params.toString(), {headers: headers}).subscribe(response => {
-            this.authenticated = true;
-            if (callback) { callback(); }
-        }, () => {
-          this.authenticated = false;
+        this.http.get('http://localhost:8082/user', {headers: headers}).subscribe(response => {
+            if (response['name']) {
+                this.authenticated = true;
+            } else {
+                this.authenticated = false;
+            }
+            return callback && callback();
         });
-        
-  }
+
+    }
 
 }

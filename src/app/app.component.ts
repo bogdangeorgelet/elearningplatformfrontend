@@ -14,7 +14,7 @@ import 'rxjs/add/operator/finally';
 export class AppComponent {
   
   constructor(private app: AppService, private http: HttpClient, private router: Router) {
-      this.app.authenticate({}, undefined);
+      this.app.authenticate(undefined, undefined);
     }
 
     logout() {

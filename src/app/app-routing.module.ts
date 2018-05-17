@@ -11,31 +11,31 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'app-home',
+        redirectTo: 'home',
         pathMatch: 'full'
     },
     {
-        path: 'app-home',
+        path: 'home',
         component: HomeComponent
     },
     {
-        path: 'app-login',
+        path: 'login',
         component: LoginComponent
     },
     {
-        path: 'app-welcome',
+        path: 'welcome',
         component: WelcomeComponent
     },
     {
-        path:'app-course',
+        path:'course',
         component: CourseComponent
     },
     {
-        path: 'app-customer',
+        path: 'customer',
         component: CustomerComponent
     },
     {
-        path: 'app-instructors',
+        path: 'instructors',
         component: InstructorsComponent
     }
 ];

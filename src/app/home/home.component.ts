@@ -12,11 +12,7 @@ export class HomeComponent {
   greeting = {};
 
   constructor(private app: AppService, private http: HttpClient) {
-    http.get('token').subscribe(data => {
-      const token = data['token'];
-      http.get('http://localhost:8082', {headers : new HttpHeaders().set('X-Auth-Token', token)})
-        .subscribe(response => this.greeting = response);
-    }, () => {});
+    http.get('http://localhost:8082/resource').subscribe(data => this.greeting = data);
   }
 
   authenticated() {
