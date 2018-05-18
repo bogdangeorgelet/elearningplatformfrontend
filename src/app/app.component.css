@@ -1,0 +1,25 @@
+.left-col {
+    width: 50%;
+    float: left;
+    padding-left: 25px;
+  }
+  
+  .right-col {
+    width: 50%;
+    float: right;
+    padding-top: 15px;
+  }
+  
+  .right-col a {
+    padding: 15px;
+  }
+
+  .content {
+      position: relative;
+  }
+
+  .content p {
+    text-align: center;
+    color:black;
+  }
+  
