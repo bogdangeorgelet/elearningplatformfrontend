@@ -17,6 +17,7 @@ import { AppService } from './app.service';
 import { Observable } from 'rxjs/Observable';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @Injectable()
 export class XhrIterceptor implements HttpInterceptor {
@@ -38,7 +39,8 @@ export class XhrIterceptor implements HttpInterceptor {
     InstructorsComponent,
     WelcomeComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

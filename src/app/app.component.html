@@ -1,20 +1,2 @@
-<div class="content">
-  <div class="header-container">
-    <div class="left-col"></div>
-    <div class="right-col">
-      <a routerLink="app-home">Home</a>
-      <a routerLink="app-login">Login</a>
-      <a routerLink="app-course">Courses</a>
-      <a routerLink="app-customer">Customers</a>
-      <a routerLink="app-instructors">Instructors</a>
-      <a routerLink="">About Us</a>
-      <a routerLink="">Contact Us</a>
-    </div>
-  </div>
-  <router-outlet></router-outlet>
-</div>
-
-<!-- TODO : 
-1.fix the style of modal and of the whole template
-2.see why when adding new instructor, remembers the informations of last added instructor 
--->
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
