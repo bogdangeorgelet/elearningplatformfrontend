@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CustomerComponent } from './customer/customer.component';
 import { InstructorsComponent } from './instructors/instructors.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home-page/home.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -27,7 +27,7 @@ const routes: Routes = [
         component: WelcomeComponent
     },
     {
-        path:'course',
+        path: 'course',
         component: CourseComponent
     },
     {

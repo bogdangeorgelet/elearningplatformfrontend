@@ -16,7 +16,7 @@ import { InstructorsComponent } from './instructors/instructors.component';
 import { AppService } from './app.service';
 import { Observable } from 'rxjs/Observable';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home-page/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 @Injectable()
