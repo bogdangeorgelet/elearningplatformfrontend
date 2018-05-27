@@ -7,6 +7,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { InstructorsComponent } from './instructors/instructors.component';
 import { HomeComponent } from './home-page/home.component';
 import { LoginComponent } from './login/login.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
     {
@@ -37,6 +38,10 @@ const routes: Routes = [
     {
         path: 'instructors',
         component: InstructorsComponent
+    },
+    {
+        path: 'contact',
+        component: ContactComponent
     }
 ];
 

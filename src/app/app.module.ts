@@ -18,6 +18,7 @@ import { Observable } from 'rxjs/Observable';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home-page/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ContactComponent } from './contact/contact.component';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -40,7 +41,8 @@ export class XhrInterceptor implements HttpInterceptor {
     WelcomeComponent,
     LoginComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
