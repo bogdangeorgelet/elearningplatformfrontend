@@ -1,21 +1,21 @@
-.carousel {
-  margin-bottom: 4rem;
+.carousel-inner {
+  height: 100%;
+  width: 100%;
 }
 
-.carousel-caption {
-  z-index: 10;
-  bottom: 3rem;
+.padding {
+  padding: 2rem;
 }
 
-.carousel-item {
-  height: 32rem;
-  background-color: #777;
+.habanero-info {
+  color: #EFF3F5;
+  background-color: #222C3C;
 }
 
-.carousel-item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 32rem;
+.habanero-info .vertical-line {
+  border-left: 2px solid #1E2631;
+}
+
+.width-top-courses {
+  width: 90%;
 }
