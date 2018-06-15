@@ -46,3 +46,5 @@ export class ContactComponent implements OnInit {
     }
 
 }
+
+// TODO: add a message after submiting, add an error, make the inputs blank after submiting;
