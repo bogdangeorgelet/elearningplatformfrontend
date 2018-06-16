@@ -1,34 +1,34 @@
 <div class="container">
   <h1>Contact Form</h1>
 
-  <form>
+  <form autocomplete="off" spellcheck="false" #contactForm="ngForm" class="contactForm">
 
     <div class="form-group">
       <label for="formGrupExampleInput">Firstname</label>
-      <input type="text" class="form-control" id="formGrupExampleInput" [(ngModel)]='contactCustomer.firstName' name="firstName">
+      <input type="text" class="form-control" id="formGrupExampleInput" [(ngModel)]='contactCustomer.firstName' required minlength="3" #name="ngModel" name="firstName">
     </div>
 
     <div class="form-group">
       <label for="formGrupExampleInput2">Lastname</label>
-      <input type="text" class="form-control" id="formGrupExampleInput2" [(ngModel)]='contactCustomer.lastName' name="lastName">
+      <input type="text" class="form-control" id="formGrupExampleInput2" [(ngModel)]='contactCustomer.lastName' required minlength="3" #name="ngModel" name="lastName">
     </div>
 
     <div class="form-group">
       <label for="formGrupExampleInput3">Email</label>
-      <input type="text" class="form-control" id="formGrupExampleInput3" [(ngModel)]='contactCustomer.email' name="email">
+      <input type="text" class="form-control" id="formGrupExampleInput3" [(ngModel)]='contactCustomer.email' required minlength="4"  #name="ngModel" name="email">
     </div>
 
     <div class="form-group">
       <label for="formGrupExampleInput4">Country</label>
-      <input type="text" class="form-control" id="formGrupExampleInput5" [(ngModel)]='contactCustomer.country' name="country">
+      <input type="text" class="form-control" id="formGrupExampleInput5" [(ngModel)]='contactCustomer.country' required minlength="2"  #name="ngModel" name="country">
     </div>
 
     <div class="form-group">
       <label for="formGrupExampleInput5">Phone Number</label>
-      <input type="text" class="form-control" id="formGrupExampleInput5" [(ngModel)]='contactCustomer.phoneNumber' name="phoneNumber">
+      <input type="text" class="form-control" id="formGrupExampleInput5" [(ngModel)]='contactCustomer.phoneNumber' required minlength="4" #name="ngModel" name="phoneNumber">
     </div>
 
-    <button type="button" (click)="onSubmit()" class="btn btn-success">Submit</button>
+    <button type="button" (click)="onSubmit()" [disabled]="!contactForm.form.valid" class="btn btn-success">Submit</button>
 
   </form>
 

@@ -32,6 +32,8 @@ export class ContactComponent implements OnInit {
     const body = this.contactCustomer;
     this.http.post(url, body).subscribe(data => {
       this.refreshList();
+      this.submitted = true;
+      location.reload();
     },
       err => {
         this.error = true;
@@ -47,4 +49,4 @@ export class ContactComponent implements OnInit {
 
 }
 
-// TODO: add a message after submiting, add an error, make the inputs blank after submiting;
+// TODO: add a message after submiting, add an error;
