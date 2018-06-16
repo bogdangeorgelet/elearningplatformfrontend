@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Contact Form</h1>
+  <h1 class="contact_form_header">Contact Form</h1>
 
   <form autocomplete="off" spellcheck="false" #contactForm="ngForm" class="contactForm">
 
@@ -26,6 +26,14 @@
     <div class="form-group">
       <label for="formGrupExampleInput5">Phone Number</label>
       <input type="text" class="form-control" id="formGrupExampleInput5" [(ngModel)]='contactCustomer.phoneNumber' required minlength="4" #name="ngModel" name="phoneNumber">
+    </div>
+
+    <div class="form-group">
+      <label>Your Message</label>
+    </div>
+
+    <div class="form-group">
+      <textarea class="contact_form_textarea" #name="ngModel" rows="4" cols="50" required maxlength="32768" minlength="10"></textarea>
     </div>
 
     <button type="button" (click)="onSubmit()" [disabled]="!contactForm.form.valid" class="btn btn-success">Submit</button>
