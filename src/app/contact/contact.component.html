@@ -33,7 +33,7 @@
     </div>
 
     <div class="form-group">
-      <textarea class="contact_form_textarea" #name="ngModel" rows="4" cols="50" required maxlength="32768" minlength="10"></textarea>
+      <textarea class="contact_form_textarea" rows="4" cols="50" required maxlength="32768" minlength="10"></textarea>
     </div>
 
     <button type="button" (click)="onSubmit()" [disabled]="!contactForm.form.valid" class="btn btn-success">Submit</button>
