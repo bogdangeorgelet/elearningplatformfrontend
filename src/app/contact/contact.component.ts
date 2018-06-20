@@ -32,10 +32,6 @@ export class ContactComponent implements OnInit {
     const body = this.contactCustomer;
     this.http.post(url, body).subscribe(data => {
       this.refreshList();
-<<<<<<< HEAD
-=======
-      this.submitted = true;
->>>>>>> 6b9d5826669a9b35ea778771f9fc5bde23c483e0
       location.reload();
     },
       err => {
