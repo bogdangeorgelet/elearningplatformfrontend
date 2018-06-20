@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class ContactComponent implements OnInit {
   private hostUrl = 'http://localhost:8082/contactUs';
   customers;
-  contactCustomer = {id: '', firstname: '', lastName: '', email: '', country: '' , phoneNumber: ''};
+  contactCustomer = {id: '', firstname: '', lastName: '', email: '', country: '' , phoneNumber: '', message: ''};
   error = false;
   errorMessage;
   submitted = false;
@@ -32,6 +32,7 @@ export class ContactComponent implements OnInit {
     const body = this.contactCustomer;
     this.http.post(url, body).subscribe(data => {
       this.refreshList();
+      location.reload();
     },
       err => {
         this.error = true;
@@ -42,7 +43,12 @@ export class ContactComponent implements OnInit {
     refreshList() {
       this.http.get(this.hostUrl).subscribe(data => {
         this.customers = data;
+        console.log('refreshList');
       })
+    }
+
+    closeAlert() {
+      this.error = false;
     }
 
 }

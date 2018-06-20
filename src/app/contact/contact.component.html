@@ -28,9 +28,22 @@
       <input type="text" class="form-control" id="formGrupExampleInput5" [(ngModel)]='contactCustomer.phoneNumber' name="phoneNumber">
     </div>
 
+    <label for="formGroupTextArea">Your Message</label>
+    <div class="form-group">
+      <textarea [(ngModel)]='contactCustomer.message' name="message" required minlength="10" maxlength="344324" rows="4" cols="50"></textarea>
+    </div>
+
     <button type="button" (click)="onSubmit()" class="btn btn-success">Submit</button>
 
   </form>
+
+  <div *ngIf='error' class="text-center">
+    <p>
+      <ngb-alert type='danger' [dismissible]='true' (close)='closeAlert()'>
+        <strong>Error!</strong> {{errorMessage}}
+      </ngb-alert>
+    </p> 
+  </div>
 
 
 </div>
