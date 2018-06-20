@@ -1,0 +1,15 @@
+.contactForm {
+    margin-top: 50px;
+}
+
+.contact_form_header {
+    text-align: center;
+}
+
+.container {
+    margin-top: 120px;
+}
+
+.contact_form_textarea {
+    width: 100%;
+}
