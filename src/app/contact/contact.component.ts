@@ -12,12 +12,14 @@ import { HttpClient } from '@angular/common/http';
 export class ContactComponent implements OnInit {
   private hostUrl = 'http://localhost:8082/contactUs';
   customers;
-  contactCustomer = {id: '', firstname: '', lastName: '', email: '', country: '' , phoneNumber: '', message: ''};
+  contactCustomer = { id: '', firstname: '', lastName: '', email: '', country: '', phoneNumber: '', message: '' };
   error = false;
+  classes;
   errorMessage;
+  showSuccessMessage = false;
   submitted = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     const url = `${this.hostUrl}`;
@@ -31,25 +33,43 @@ export class ContactComponent implements OnInit {
     this.error = false;
     const body = this.contactCustomer;
     this.http.post(url, body).subscribe(data => {
+      this.closeModal();
       this.refreshList();
-      location.reload();
+      this.showSuccessMessage = true;
     },
       err => {
         this.error = true;
         this.errorMessage = err.error.message;
       })
-    }
+  }
 
-    refreshList() {
-      this.http.get(this.hostUrl).subscribe(data => {
-        this.customers = data;
-        console.log('refreshList');
-      })
-    }
+  refreshList() {
+    this.http.get(this.hostUrl).subscribe(data => {
+      this.customers = data;
+      console.log('refreshList');
+    })
+  }
 
-    closeAlert() {
-      this.error = false;
-    }
+  closeAlert() {
+    this.error = false;
+  }
+
+  closeModal() {
+    this.showSuccessMessage = true;
+    this.classes = '';
+    this.error = false;
+
+    setTimeout(function(){
+      location.reload();
+    },1000);
+  }
+
+  openModal() {
+    this.showSuccessMessage = true;
+    this.error = false;
+    this.classes = 'blurred';
+    
+  }
 
 }
 
