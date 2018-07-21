@@ -1,0 +1,46 @@
+form.register-form {
+  background-color: white;
+  padding: 3%;
+  width: 40%;
+  margin: 8% auto;
+  border-radius: 20px;
+}
+
+.register-form span#first-name, .register-form span#last-name, .register-form span#email, .register-form span#password {
+  background: linear-gradient(to right, #00374c 0, #00658c 100%);
+  width: 50px;
+}
+
+.register-form input.input-first-name, .register-form span#last-name, .forgot-password input.input-email, .forgot-password input.password {
+  color: #00658c;
+}
+
+.register-form i.fa {
+  color: white;
+}
+
+.register-details {
+  font-size: 12px;
+  margin-bottom: 3%;
+}
+
+.new-account-button {
+  width: 100%;
+  background: linear-gradient(to right, #00374c 0, #00658c 100%);
+  color: white;
+  cursor: pointer;
+}
+
+.new-account-button:hover {
+  width: 100%;
+  background: linear-gradient(to right, #00658c 0, #00374c 100%);
+  color: white;
+}
+
+.form-check {
+  font-size: 14px;
+}
+
+.form-check input.form-check-input {
+  cursor: pointer;
+}

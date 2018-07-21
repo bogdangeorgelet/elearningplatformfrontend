@@ -3,8 +3,8 @@
   <div class="login-details">Enter your details below: </div>
   <div class="form-group row">
     <div class="col-sm-12 input-group">
-      <span class="input-group-addon" id="username"><i class="fa fa-user-o"></i></span>
-      <input type="text" class="form-control input-username" placeholder="Username" aria-describedby="username">
+      <span class="input-group-addon" id="email"><i class="fa fa-envelope-o"></i></span>
+      <input type="text" class="form-control input-email" placeholder="Email address" aria-describedby="email">
     </div>
   </div>
   <div class="form-group row">
@@ -15,7 +15,7 @@
   </div>
 
   <div class="container-forgot-password">
-    <a [routerLink]="routerLinkVariable" href="#" class="forgot-password">Forgot password?</a>
+    <a routerLink="/password-reset/new" href="#" class="forgot-password">Forgot password?</a>
   </div>
 
   <div class="form-check">
@@ -26,7 +26,7 @@
   </div>
 
   <div class="container-buttons">
-    <button type="button" class="btn new-account-button">Create new account</button>
+    <button routerLink="/register" type="button" class="btn new-account-button">Create new account</button>
     <button type="button" class="btn login-button">Log in</button>
   </div>
 </form>

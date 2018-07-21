@@ -20,6 +20,7 @@ import { HomeComponent } from './home-page/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactComponent } from './contact/contact.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -44,7 +45,8 @@ export class XhrInterceptor implements HttpInterceptor {
     HomeComponent,
     NavbarComponent,
     ContactComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    SignUpComponent
   ],
 
   imports: [

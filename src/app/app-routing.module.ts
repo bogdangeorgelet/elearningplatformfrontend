@@ -8,6 +8,7 @@ import { HomeComponent } from './home-page/home.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
+import {SignUpComponent} from './sign-up/sign-up.component';
 
 const routes: Routes = [
     {
@@ -46,6 +47,10 @@ const routes: Routes = [
     {
         path: 'password-reset/new',
         component: ForgotPasswordComponent
+    },
+    {
+      path: 'register',
+      component: SignUpComponent
     }
 ];
 

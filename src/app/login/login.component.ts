@@ -10,7 +10,7 @@ import { Route, Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  public routerLinkVariable = '/password-reset/new';
+  public routerLinkVariableForgotPassword = '/password-reset/new';
 
   credentials = {username: '', password: ''};
 

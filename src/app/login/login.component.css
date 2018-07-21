@@ -1,17 +1,17 @@
 form.login-form {
   background-color: white;
   padding: 3%;
-  width: 35%;
+  width: 40%;
   margin: 8% auto;
   border-radius: 20px;
 }
 
-.login-form span#username, .login-form span#password {
+.login-form span#email, .login-form span#password {
   background: linear-gradient(to right, #00374c 0, #00658c 100%);
   width: 50px;
 }
 
-.login-form input.input-username, .login-form input.input-password {
+.login-form input.input-email, .login-form input.input-password {
   color: #00658c;
 }
 
