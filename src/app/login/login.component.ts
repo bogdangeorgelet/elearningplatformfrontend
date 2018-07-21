@@ -10,10 +10,13 @@ import { Route, Router } from '@angular/router';
 })
 export class LoginComponent {
 
+  public routerLinkVariable = '/password-reset/new';
+
   credentials = {username: '', password: ''};
 
   constructor(private app: AppService, private http: HttpClient, private router: Router) {
   }
+
   login() {
     this.app.authenticate(this.credentials, () => {
       this.router.navigateByUrl('/');

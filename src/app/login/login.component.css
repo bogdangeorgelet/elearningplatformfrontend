@@ -1,7 +1,3 @@
-body {
-  background: red !important;
-}
-
 form.login-form {
   background-color: white;
   padding: 3%;
@@ -29,27 +25,27 @@ form.login-form {
 }
 
 .login-button {
-  width: 49%;
+  width: 60%;
   background: linear-gradient(to right, #00374c 0, #00658c 100%);
   color: white;
   cursor: pointer;
 }
 
 .login-button:hover {
-  width: 49%;
+  width: 60%;
   background: linear-gradient(to right, #00658c 0, #00374c 100%);
   color: white;
 }
 
 .new-account-button {
-  width: 50%;
+  width: 39%;
   background: linear-gradient(to right, #ff5722 0, #ff9800 100%);
   color: white;
   cursor: pointer;
 }
 
 .new-account-button:hover {
-  width: 50%;
+  width: 39%;
   background: linear-gradient(to right, #ff9800 0, #ff5722 100%);
   color: white;
 }

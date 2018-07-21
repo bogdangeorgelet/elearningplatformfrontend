@@ -4,7 +4,7 @@ import { RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {
-  HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HTTP_INTERCEPTORS
+  HttpInterceptor, HttpHandler, HttpRequest, HTTP_INTERCEPTORS
 } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,11 +15,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { CustomerComponent } from './customer/customer.component';
 import { InstructorsComponent } from './instructors/instructors.component';
 import { AppService } from './app.service';
-import { Observable } from 'rxjs/Observable';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home-page/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactComponent } from './contact/contact.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -43,8 +43,10 @@ export class XhrInterceptor implements HttpInterceptor {
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    ContactComponent
+    ContactComponent,
+    ForgotPasswordComponent
   ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -57,4 +59,5 @@ export class XhrInterceptor implements HttpInterceptor {
   providers: [AppService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
