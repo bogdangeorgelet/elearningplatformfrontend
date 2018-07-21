@@ -1,0 +1,73 @@
+body {
+  background: red !important;
+}
+
+form.login-form {
+  background-color: white;
+  padding: 3%;
+  width: 35%;
+  margin: 8% auto;
+  border-radius: 20px;
+}
+
+.login-form span#username, .login-form span#password {
+  background: linear-gradient(to right, #00374c 0, #00658c 100%);
+  width: 50px;
+}
+
+.login-form input.input-username, .login-form input.input-password {
+  color: #00658c;
+}
+
+.login-form i.fa {
+  color: white;
+}
+
+.login-details {
+  font-size: 12px;
+  margin-bottom: 3%;
+}
+
+.login-button {
+  width: 49%;
+  background: linear-gradient(to right, #00374c 0, #00658c 100%);
+  color: white;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  width: 49%;
+  background: linear-gradient(to right, #00658c 0, #00374c 100%);
+  color: white;
+}
+
+.new-account-button {
+  width: 50%;
+  background: linear-gradient(to right, #ff5722 0, #ff9800 100%);
+  color: white;
+  cursor: pointer;
+}
+
+.new-account-button:hover {
+  width: 50%;
+  background: linear-gradient(to right, #ff9800 0, #ff5722 100%);
+  color: white;
+}
+
+.form-check {
+  font-size: 14px;
+}
+
+.form-check input.form-check-input {
+  cursor: pointer;
+}
+
+.container-forgot-password {
+  width: 100%;
+  text-align: right;
+  margin-top: -10px;
+}
+
+.forgot-password {
+  font-size: 12px;
+}
