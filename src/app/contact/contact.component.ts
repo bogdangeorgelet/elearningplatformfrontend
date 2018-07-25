@@ -61,9 +61,9 @@ export class ContactComponent implements OnInit {
     this.classes = '';
     this.error = false;
 
-    // setTimeout(function(){
-    //   location.reload();
-    // },1000);
+    setTimeout(function(){
+      location.reload();
+    },1000);
   }
 
 }
