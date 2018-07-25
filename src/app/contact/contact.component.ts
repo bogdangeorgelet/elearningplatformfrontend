@@ -41,7 +41,6 @@ export class ContactComponent implements OnInit {
         this.showSuccessMessage = false;
         this.error = true;
         this.errorMessage = err.error.message;
-        console.log(this.errorMessage);
       })
   }
 
@@ -54,6 +53,7 @@ export class ContactComponent implements OnInit {
 
   closeAlert() {
     this.error = false;
+    location.reload();
   }
 
   closeModal() {

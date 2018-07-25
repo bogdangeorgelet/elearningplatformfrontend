@@ -29,3 +29,14 @@
     top: 40%;
     font-size: 25px;
 }
+
+.btn-primary {
+    background-color: #fff;
+    color: black;
+    border-color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #f2f2f2;
+    border-color: #f2f2f2;
+}
