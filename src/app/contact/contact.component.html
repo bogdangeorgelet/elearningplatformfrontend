@@ -33,8 +33,8 @@
 
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="text" class="form-control" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required minlength="4" [(ngModel)]='contactCustomer.email' name="email"
-        #email="ngModel">
+      <input type="text" class="form-control" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required minlength="4"
+        [(ngModel)]='contactCustomer.email' name="email" #email="ngModel">
       <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
         <div *ngIf="email.errors.required">
           Email is required
@@ -43,7 +43,7 @@
           Email must be at least 4 characters long.
         </div>
         <div *ngIf="email.errors.pattern">
-            Please provide a valid email address.
+          Please provide a valid email address.
         </div>
       </div>
     </div>
@@ -64,8 +64,8 @@
 
     <div class="form-group">
       <label for="phoneNumber">Phone Number</label>
-      <input type="text" class="form-control" id="phoneNumber" pattern="[0-9]+" [(ngModel)]='contactCustomer.phoneNumber' required minlength="4"
-        #phoneNumber="ngModel" name="phoneNumber">
+      <input type="text" class="form-control" id="phoneNumber" pattern="[0-9]+" [(ngModel)]='contactCustomer.phoneNumber' required
+        minlength="4" #phoneNumber="ngModel" name="phoneNumber">
       <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)" class="alert alert-danger">
         <div *ngIf="phoneNumber.errors.required">
           Phone Number is required
@@ -74,7 +74,7 @@
           Phone Number must be at least 4 characters long.
         </div>
         <div *ngIf="phoneNumber.errors.pattern">
-            Please provide a valid phone number.
+          Please provide a valid phone number.
         </div>
       </div>
     </div>
@@ -84,25 +84,22 @@
       <textarea [(ngModel)]='contactCustomer.message' name="message" required minlength="10" maxlength="344324" rows="5" cols="120"></textarea>
     </div>
 
-    <button type="button" [disabled]="contactForm.invalid" (click)="onSubmit()" class="btn btn-success">Submit</button>
-
+    <button type="button" [disabled]="contactForm.invalid" (click)="onSubmit(form)" class="btn btn-success">Submit</button>
 
   </form>
 
   <div class="modal submitted-message" *ngIf="showSuccessMessage">
     <div class="col-2"></div>
     <div class="row" style="display: block">
-        <p>You've sent your message</p>
+      <p>You've sent your message</p>
     </div>
   </div>
 
-  <div *ngIf='error' class="text-center">
-    <p>
-      <ngb-alert type='danger' [dismissible]='true' (close)='closeAlert()'>
-        <strong>Error!</strong> {{errorMessage}}
-      </ngb-alert>
-    </p>
+  <div class="modal error-message" *ngIf='error'>
+    <div class="col-2"></div>
+    <div class="row" style="display: block">
+      <p>Firstname already taken!</p>
+    </div>
   </div>
-
 
 </div>

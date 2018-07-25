@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerComponent } from '../customer/customer.component';
 import { CustomerExample } from '../customer-example';
 import { HttpClient } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -35,11 +36,12 @@ export class ContactComponent implements OnInit {
     this.http.post(url, body).subscribe(data => {
       this.closeModal();
       this.refreshList();
-      this.showSuccessMessage = true;
     },
       err => {
+        this.showSuccessMessage = false;
         this.error = true;
         this.errorMessage = err.error.message;
+        console.log(this.errorMessage);
       })
   }
 
@@ -59,18 +61,9 @@ export class ContactComponent implements OnInit {
     this.classes = '';
     this.error = false;
 
-    setTimeout(function(){
-      location.reload();
-    },1000);
-  }
-
-  openModal() {
-    this.showSuccessMessage = true;
-    this.error = false;
-    this.classes = 'blurred';
-    
+    // setTimeout(function(){
+    //   location.reload();
+    // },1000);
   }
 
 }
-
-// TODO: add a message after submiting, add an error;
