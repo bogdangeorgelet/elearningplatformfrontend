@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
 import {SignUpComponent} from './sign-up/sign-up.component';
+import { SignupInstructorsComponent } from './signup-instructors/signup-instructors.component';
 
 const routes: Routes = [
     {
@@ -51,6 +52,10 @@ const routes: Routes = [
     {
       path: 'register',
       component: SignUpComponent
+    },
+    {
+        path: 'signup-instructors',
+        component: SignupInstructorsComponent
     }
 ];
 
