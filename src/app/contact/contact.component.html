@@ -5,7 +5,8 @@
 
     <div class="form-group">
       <label for="firstName">Firstname</label>
-      <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]='contactCustomer.firstName' required
+      <input type="text" class="form-control" id="firstName" name="firstName" 
+        [(ngModel)]='contactCustomer.firstName' required
         minlength="3" #firstName="ngModel">
       <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
         <div *ngIf="firstName.errors.required">

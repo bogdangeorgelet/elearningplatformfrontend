@@ -3,18 +3,31 @@
     <div class="row main">
       <div class="panel-heading">
         <div class="panel-title text-center">
-          <h1 class="title">Create your Habanero account</h1>
+          <h1 class="title">Become a Habanero instructor</h1>
         </div>
       </div>
-      <div class="main-login main-center">
-        <form class="form-horizontal" method="post" action="#">
+      <div class="main-register main-center">
+        
+        <form class="form-horizontal registerForm" #registerForm="ngForm">
 
           <div class="form-group">
-            <label for="name" class="cols-sm-2 control-label">Your Name</label>
+            <label for="firstName" class="cols-sm-2 control-label">Your Firstname</label>
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name" />
+                <input type="text"  class="form-control" name="firstName" id="firstName" placeholder="Enter your Firstname" 
+                  [(ngModel)]='registerInstructorModal.firstName' #firstName="ngModel"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName" class="cols-sm-2 control-label">Your Lastname</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter your Lastname" 
+                [(ngModel)]='registerInstructorModal.lastName' #lastName="ngModel"/>
               </div>
             </div>
           </div>
@@ -24,7 +37,8 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
+                <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" 
+                  [(ngModel)]='registerInstructorModal.email' #email="ngModel"/>
               </div>
             </div>
           </div>
@@ -34,7 +48,8 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username" />
+                <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username" 
+                [(ngModel)]='registerInstructorModal.username' #username="ngModel"/>
               </div>
             </div>
           </div>
@@ -44,7 +59,8 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
+                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" 
+                  [(ngModel)]='registerInstructorModal.password' #password="ngModel"/>
               </div>
             </div>
           </div>
@@ -54,13 +70,14 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="confirm" id="confirm" placeholder="Confirm your Password" />
+                <input type="password" class="form-control" name="confirm" id="confirm" placeholder="Confirm your Password" 
+                [(ngModel)]='registerInstructorModal.confirmPassword' #confirmPassword="ngModel"/>
               </div>
             </div>
           </div>
 
           <div class="form-group ">
-            <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+            <button type="button" [disabled]="registerForm.invalid" (click)="onSubmit()" class="btn btn-primary btn-lg btn-block login-button">Register</button>
           </div>
         </form>
       </div>
