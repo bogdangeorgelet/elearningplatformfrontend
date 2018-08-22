@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerComponent } from '../customer/customer.component';
+import { CustomerExample } from '../customer-example';
 import { HttpClient } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'signup-instructors',
@@ -8,8 +11,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SignupInstructorsComponent implements OnInit {
   private hostUrl = 'http://localhost:8082/registerInstructor';
-  instructors;
-  registerInstructor = {id: '', firstName: '', lastName: '', email: '', username: '', password: '', confirmPassword: ''};
+  instructor;
+  registerInstructor = { id: '', firstName: '', lastName: '', email: '', username: '', password: '', confirmPassword: '' };
   error = false;
   classes;
   errorMessage;
@@ -21,7 +24,7 @@ export class SignupInstructorsComponent implements OnInit {
   ngOnInit(): void {
     const url = `${this.hostUrl}`;
     this.http.get(url).subscribe(data => {
-      this.instructors = data;
+      this.instructor = data;
     });
   }
 
@@ -30,7 +33,8 @@ export class SignupInstructorsComponent implements OnInit {
     this.error = false;
     const body = this.registerInstructor;
     this.http.post(url, body).subscribe(data => {
-      console.log(data);
+      this.closeModal();
+      this.refreshList();
     },
       err => {
         this.showSuccessMessage = true;
@@ -39,4 +43,23 @@ export class SignupInstructorsComponent implements OnInit {
       })
   }
 
+  refreshList() {
+    this.http.get(this.hostUrl).subscribe(data => {
+      this.instructor = data;
+      console.log('refreshList');
+    })
+  }
+
+  closeModal() {
+    this.showSuccessMessage = true;
+    this.classes = '';
+    this.error = false;
+
+    setTimeout(function(){
+      location.reload();
+    },1000);
+  }
+
 }
+
+// have to add validation, location reload after submit
