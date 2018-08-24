@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="main-register main-center">
-        
+
         <form class="form-horizontal registerForm" #registerForm="ngForm">
 
           <div class="form-group">
@@ -15,8 +15,16 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your Firstname"
+                <input type="text" class="form-control" id="firstName" name="firstName" minlength="3" required placeholder="Enter your Firstname"
                   [(ngModel)]='registerInstructor.firstName' #firstName="ngModel">
+              </div>
+              <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+                <div *ngIf="firstName.errors.required">
+                  Firstname is required
+                </div>
+                <div *ngIf="firstName.errors.minlength">
+                  Firstname must be at least 3 characters long.
+                </div>
               </div>
             </div>
           </div>
@@ -26,8 +34,16 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter your Lastname" 
-                  [(ngModel)]='registerInstructor.lastName' #lastName="ngModel"/>
+                <input type="text" class="form-control" name="lastName" id="lastName" minlength="3" required placeholder="Enter your Lastname"
+                  [(ngModel)]='registerInstructor.lastName' #lastName="ngModel" />
+              </div>
+              <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
+                <div *ngIf="lastName.errors.required">
+                  Lastname is required
+                </div>
+                <div *ngIf="lastName.errors.minlength">
+                  Lastname must be at least 3 characters long.
+                </div>
               </div>
             </div>
           </div>
@@ -37,8 +53,19 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" 
-                  [(ngModel)]='registerInstructor.email' #email="ngModel"/>
+                <input type="text" class="form-control" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required minlength="4" placeholder="Enter your Email" [(ngModel)]='registerInstructor.email'
+                  #email="ngModel" />
+              </div>
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                <div *ngIf="email.errors.required">
+                  Email is required
+                </div>
+                <div *ngIf="email.errors.minlength">
+                  Email must be at least 4 characters long.
+                </div>
+                <div *ngIf="email.errors.pattern">
+                  Please provide a valid email address.
+                </div>
               </div>
             </div>
           </div>
@@ -48,8 +75,16 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username" 
-                [(ngModel)]='registerInstructor.username' #username="ngModel"/>
+                <input type="text" class="form-control" name="username" id="username" minlength="3" required placeholder="Enter your Username" [(ngModel)]='registerInstructor.username'
+                  #username="ngModel" />
+              </div>
+              <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+                <div *ngIf="username.errors.required">
+                  Username is required
+                </div>
+                <div *ngIf="username.errors.minlength">
+                  Username must be at least 3 characters long.
+                </div>
               </div>
             </div>
           </div>
@@ -59,8 +94,16 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" 
-                  [(ngModel)]='registerInstructor.password' #password="ngModel"/>
+                <input type="password" class="form-control" name="password" id="password" required minlength="6" placeholder="Enter your Password" [(ngModel)]='registerInstructor.password'
+                  #password="ngModel" />
+              </div>
+              <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                <div *ngIf="password.errors.required">
+                  Password is required
+                </div>
+                <div *ngIf="password.errors.minlength">
+                  Password must be at least 6 characters long.
+                </div>
               </div>
             </div>
           </div>
@@ -70,16 +113,43 @@
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="confirm" id="confirm" placeholder="Confirm your Password" 
-                [(ngModel)]='registerInstructor.confirmPassword' #confirmPassword="ngModel"/>
+                <input type="password" class="form-control" name="confirm" id="confirm" required minlength="6" placeholder="Confirm your Password" [(ngModel)]='registerInstructor.confirmPassword'
+                  validateEqual="password" #confirmPassword="ngModel" />
+              </div>
+              <div class="alert alert-danger" style="font-size: 1rem;" [hidden]="confirmPassword.valid || confirmPassword.pristine">
+                  Password mismatch
               </div>
             </div>
           </div>
 
           <div class="form-group ">
-            <button type="button" [disabled]="registerForm.invalid" (click)="onSubmit()" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+            <button type="button" [disabled]="registerForm.invalid" (click)="onSubmit(form)" class="btn btn-primary btn-lg btn-block login-button">Register</button>
           </div>
+
         </form>
+
+        <div class="modal error-message" *ngIf='error'>
+          <div class="col-2"></div>
+          <div class="row" style="display: block">
+            <p>Firstname already taken!</p>
+          </div>
+          <button type="button" class="btn btn-primary" (click)='closeAlert()'>
+            <span>
+              <i class="fa fa-times"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="alert alert-danger" *ngIf="confirmPassword.errors?.MatchPassword">
+          Password not match
+        </div>
+
+        <div class="modal submitted-message" *ngIf="showSuccessMessage">
+          <div class="col-2"></div>
+          <div class="row" style="display: block">
+            <p>You've sent your message</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

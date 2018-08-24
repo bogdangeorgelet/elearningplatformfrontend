@@ -3,6 +3,8 @@ import { CustomerComponent } from '../customer/customer.component';
 import { CustomerExample } from '../customer-example';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import { PasswordValidation } from '../password-validation';
+
 
 @Component({
   selector: 'signup-instructors',
@@ -16,7 +18,6 @@ export class SignupInstructorsComponent implements OnInit {
   error = false;
   classes;
   errorMessage;
-  submitted = false;
   showSuccessMessage = false;
 
   constructor(private http: HttpClient) { }
@@ -37,7 +38,7 @@ export class SignupInstructorsComponent implements OnInit {
       this.refreshList();
     },
       err => {
-        this.showSuccessMessage = true;
+        this.showSuccessMessage = false;
         this.error = true;
         this.errorMessage = err.error.message;
       })
@@ -48,6 +49,11 @@ export class SignupInstructorsComponent implements OnInit {
       this.instructor = data;
       console.log('refreshList');
     })
+  }
+
+  closeAlert() {
+    this.error = false;
+    location.reload();
   }
 
   closeModal() {
@@ -62,4 +68,3 @@ export class SignupInstructorsComponent implements OnInit {
 
 }
 
-// have to add validation, location reload after submit

@@ -23,6 +23,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignupInstructorsComponent } from './signup-instructors/signup-instructors.component';
+import { PasswordValidation } from './password-validation';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -62,7 +63,7 @@ export class XhrInterceptor implements HttpInterceptor {
     AppRoutingModule,
     AngularFontAwesomeModule
   ],
-  providers: [AppService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true}],
+  providers: [AppService,PasswordValidation, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 
