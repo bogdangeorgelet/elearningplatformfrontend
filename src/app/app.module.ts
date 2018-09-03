@@ -25,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SignupInstructorsComponent } from './signup-instructors/signup-instructors.component';
 import { PasswordValidation } from './password-validation';
 
+
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
 

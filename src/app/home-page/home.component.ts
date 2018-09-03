@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent {
   title = 'E-Learning-Platform';
   greeting = {};

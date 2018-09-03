@@ -40,14 +40,17 @@
       </li>
     </ul>
     <div class="form-inline my-2 my-lg-0">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="login">Log In</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="register">Sign Up</a>
-        </li>
-      </ul>
-    </div>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" *ngIf="!authenticated">
+            <a class="nav-link" href="#" routerLink="login">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="register">Sign Up</a>
+          </li>
+          <li class="nav-item" *ngIf="authenticated">
+            <a class="nav-link" href="#" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
   </div>
 </nav>

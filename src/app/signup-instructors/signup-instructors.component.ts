@@ -23,7 +23,7 @@ export class SignupInstructorsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    const url = `${this.hostUrl}`;
+    const url = `http://localhost:8082/instructors`;
     this.http.get(url).subscribe(data => {
       this.instructor = data;
     });
