@@ -25,4 +25,8 @@ export class AppService {
 
     }
 
+    isAuthenticated() {
+        return this.authenticated;
+    }
+
 }

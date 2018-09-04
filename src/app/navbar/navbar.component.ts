@@ -7,10 +7,15 @@ import { AppService } from '../app.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  ifAuthenticate = false;
   constructor(private app: AppService) { }
 
   ngOnInit() {
+  }
+
+  authenticated() {
+    this.ifAuthenticate = false;
+    return this.app.authenticated;
   }
 
 }
