@@ -7,13 +7,13 @@
   <div class="form-group row">
     <div class="col-sm-12 input-group">
       <span class="input-group-addon" id="username email"><i class="fa fa-envelope-o"></i></span>
-      <input type="text" class="form-control input-email" name="username" placeholder="username" [(ngModel)]="credentials.username" aria-describedby="username">
+      <input type="text" class="form-control input-email" name="username" placeholder="username" ngModel aria-describedby="username">
     </div>
   </div>
   <div class="form-group row">
     <div class="col-sm-12 input-group">
       <span class="input-group-addon" id="password"><i class="fa fa-unlock-alt"></i></span>
-      <input type="password" class="form-control input-password" name="password" [(ngModel)]="credentials.password" placeholder="Password" aria-describedby="password">
+      <input type="password" class="form-control input-password" name="password" ngModel placeholder="Password" aria-describedby="password">
     </div>
   </div>
 
@@ -30,6 +30,6 @@
 
   <div class="container-buttons">
     <button routerLink="/register" type="button" class="btn new-account-button">Create new account</button>
-    <button type="submit" class="btn login-button">Log in</button>
+    <button type="submit" (click)="login(form)" class="btn login-button">Log in</button>
   </div>
 </form>

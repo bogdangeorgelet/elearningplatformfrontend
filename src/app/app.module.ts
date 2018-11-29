@@ -15,7 +15,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { CustomerComponent } from './customer/customer.component';
 import { InstructorsComponent } from './instructors/instructors.component';
 import { AppService } from './app.service';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent, AuthGuard, AdminGuard } from './login/login.component';
 import { HomeComponent } from './home-page/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactComponent } from './contact/contact.component';
@@ -26,16 +26,16 @@ import { SignupInstructorsComponent } from './signup-instructors/signup-instruct
 import { PasswordValidation } from './password-validation';
 
 
-@Injectable()
-export class XhrInterceptor implements HttpInterceptor {
+// @Injectable()
+// export class XhrInterceptor implements HttpInterceptor {
 
-  intercept(req: HttpRequest<any>, next: HttpHandler) {
-    const xhr = req.clone({
-      headers: req.headers.set('X-Requested-With', 'XMLHttpRequest')
-    });
-    return next.handle(xhr);
-  }
-}
+//   intercept(req: HttpRequest<any>, next: HttpHandler) {
+//     const xhr = req.clone({
+//       headers: req.headers.set('X-Requested-With', 'XMLHttpRequest')
+//     });
+//     return next.handle(xhr);
+//   }
+// }
 
 @NgModule({
   declarations: [
@@ -64,7 +64,7 @@ export class XhrInterceptor implements HttpInterceptor {
     AppRoutingModule,
     AngularFontAwesomeModule
   ],
-  providers: [AppService,PasswordValidation, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true}],
+  providers: [AppService,PasswordValidation, AuthGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 
