@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit{
       //   this.router.navigate(["/shop/admin"])
       // }else if (resp.json()[0].authority == "f"){
       //   localStorage.setItem('userIsCustomer', "true");
-      this.router.navigate(["/home"]);
+      this.router.navigateByUrl('/home');
     }, err => {
         this.warn();
       localStorage.removeItem('authenticated');
@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit{
     this.alerts.push({
       type: 'danger',
       msg: `Wrong credentials! Username and/or Password are incorrect`,
-      timeout: 3000
+      // timeout: 10000
     });
   }
   public success(): void {
@@ -105,7 +105,7 @@ canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observabl
   if (localStorage.getItem('authenticated').toString() == 'true') {
     return true;
   } else {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
     return false;
   }
 }
@@ -120,7 +120,7 @@ canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observabl
   if (localStorage.getItem('userIsAdmin') != null) {
     return true;
   } else {
-    this.router.navigate(['/shop/client']);
+    this.router.navigate(['/home']);
     return false;
   }
 }
