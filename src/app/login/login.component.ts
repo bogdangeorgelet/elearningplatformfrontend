@@ -7,13 +7,16 @@ import { Auth } from './auth';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 
+// TODO: dupa ce e logat, sa apara logout, iar daca nu e logat, sa pun si register
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-
+  
+  public alerts: any = [];
   warning : any;
   auth: Auth;  
   ngOnInit(): void {
@@ -25,15 +28,8 @@ export class LoginComponent implements OnInit{
 
   credentials = {username: '', password: ''};
 
-  constructor(private app: AppService, private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router) {
   }
-
-  // login() {
-  //   this.app.authenticate(this.credentials, () => {
-  //     this.router.navigateByUrl('/');
-  //   })
-  //   return false;
-  // }
 
   login(form: NgForm){
 
@@ -54,6 +50,7 @@ export class LoginComponent implements OnInit{
       //   this.router.navigate(["/shop/admin"])
       // }else if (resp.json()[0].authority == "f"){
       //   localStorage.setItem('userIsCustomer', "true");
+      console.log('login method');
       this.router.navigateByUrl('/home');
     }, err => {
         this.warn();
@@ -69,14 +66,11 @@ export class LoginComponent implements OnInit{
     window.location.reload();
   }
 
-  public alerts: any = [];
-
-
   public warn(): void {
     this.alerts.push({
       type: 'danger',
       msg: `Wrong credentials! Username and/or Password are incorrect`,
-      // timeout: 10000
+      timeout: 3000
     });
   }
   public success(): void {

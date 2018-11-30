@@ -1,11 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable } from '@angular/core';
-import { RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {
-  HttpInterceptor, HttpHandler, HttpRequest, HTTP_INTERCEPTORS
-} from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -24,18 +20,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignupInstructorsComponent } from './signup-instructors/signup-instructors.component';
 import { PasswordValidation } from './password-validation';
-
-
-// @Injectable()
-// export class XhrInterceptor implements HttpInterceptor {
-
-//   intercept(req: HttpRequest<any>, next: HttpHandler) {
-//     const xhr = req.clone({
-//       headers: req.headers.set('X-Requested-With', 'XMLHttpRequest')
-//     });
-//     return next.handle(xhr);
-//   }
-// }
+import { AlertModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -61,6 +46,7 @@ import { PasswordValidation } from './password-validation';
     AppRoutingModule,
     FormsModule,
     NgbModule,
+    AlertModule.forRoot(),
     AppRoutingModule,
     AngularFontAwesomeModule
   ],

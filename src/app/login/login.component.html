@@ -1,7 +1,12 @@
 <div class="alert alert-danger" [hidden]="!error">
 	There was a problem logging in. Please try again.
 </div>
-<form  #loginForm="ngForm" (submit)="login()" class="form-control row login-form">
+
+<div style="margin-top: 3%; text-align: center" *ngFor="let alert of alerts">
+  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+</div>
+
+<form  #form="ngForm" class="form-control row login-form">
   <h2>Log in to <b>Habanero</b></h2>
   <div class="login-details">Enter your details below: </div>
   <div class="form-group row">
@@ -30,6 +35,6 @@
 
   <div class="container-buttons">
     <button routerLink="/register" type="button" class="btn new-account-button">Create new account</button>
-    <button type="submit" (click)="login(form)" class="btn login-button">Log in</button>
+    <button (click)="login(form)" class="btn login-button">Log in</button>
   </div>
 </form>

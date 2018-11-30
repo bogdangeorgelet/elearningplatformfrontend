@@ -8,7 +8,7 @@ export class AppService {
 
   constructor(private http: HttpClient) { }
 
-  authenticate(credentials, callback) {
+//   authenticate(credentials, callback) {
 
         // const headers = new HttpHeaders(credentials ? {
         //     authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
@@ -23,10 +23,12 @@ export class AppService {
         //     return callback && callback();
         // });
 
-    }
+    //     console.log('service');
 
-    isAuthenticated() {
-        return this.authenticated;
-    }
+    // }
+
+    // isAuthenticated() {
+    //     return this.authenticated;
+    // }
 
 }
