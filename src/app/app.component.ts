@@ -17,11 +17,6 @@ export class AppComponent {
       // this.app.authenticate(undefined, undefined);
     }
 
-    logout() {
-      this.http.post('logout', {}).finally(() => {
-          this.app.authenticated = false;
-          this.router.navigateByUrl('/login');
-      }).subscribe();
-    }
+
 
 }

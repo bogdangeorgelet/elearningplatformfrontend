@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,15 +8,22 @@ import { AppService } from '../app.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  ifAuthenticate = false;
-  constructor(private app: AppService) { }
+  authenticated = true;
+  constructor(private router: Router, private app: AppService) { }
 
   ngOnInit() {
   }
 
-  authenticated() {
-    this.ifAuthenticate = false;
-    return this.app.authenticated;
+  logout() {
+    localStorage.clear();
+    localStorage.setItem('authenticated', "false");
+    this.authenticated = false;
+    this.router.navigateByUrl('/login');
   }
+
+  // authenticated() {
+  //   this.ifAuthenticate = false;
+  //   return this.app.authenticated;
+  // }
 
 }

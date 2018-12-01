@@ -42,14 +42,14 @@
     <div class="form-inline my-2 my-lg-0">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item" >
-            <a class="nav-link" href="#" routerLink="login">Log In</a>
+            <a class="nav-link" href="#" *ngIf="!authenticated" routerLink="login">Log In</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#" routerLink="register">Sign Up</a>
           </li> -->
-          <!-- <li class="nav-item" >
-            <a class="nav-link" href="#" *ngIf="authenticated" (click)="logout()">Logout</a>
-          </li> -->
+          <li class="nav-item" >
+            <a class="nav-link" style="cursor:pointer" (click)="logout()">Log Out</a>
+          </li>
         </ul>
       </div>
   </div>

@@ -50,7 +50,7 @@ import { AlertModule} from 'ngx-bootstrap';
     AppRoutingModule,
     AngularFontAwesomeModule
   ],
-  providers: [AppService,PasswordValidation, AuthGuard, AdminGuard],
+  providers: [AppService, AppComponent,PasswordValidation, AuthGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 
