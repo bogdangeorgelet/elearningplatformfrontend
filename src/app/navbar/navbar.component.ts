@@ -10,9 +10,12 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   authenticated = true;
   constructor(private router: Router, private app: AppService) { }
+  ifAuthenticate: string;
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.ifAuthenticate = localStorage.getItem('authenticated');
   }
+
 
   logout() {
     localStorage.clear();
@@ -21,9 +24,5 @@ export class NavbarComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
-  // authenticated() {
-  //   this.ifAuthenticate = false;
-  //   return this.app.authenticated;
-  // }
 
 }
