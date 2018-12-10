@@ -11,10 +11,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class HomeComponent implements OnInit{
   title = 'E-Learning-Platform';
   greeting = {};
-  ifAuthenticate = localStorage.getItem('authenticated');
+  ifAuthenticate: string;
   
   ngOnInit(): void {
-    // throw new Error("Method not implemented.");
+    this.ifAuthenticate = localStorage.getItem('authenticated');
   }
   
   constructor(private app: AppService, private http: HttpClient) {

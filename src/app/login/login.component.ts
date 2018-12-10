@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit{
   public alerts: any = [];
   warning : any;
   auth: Auth;
-  authenticated = false;
     
   ngOnInit(): void {
     localStorage.clear();
@@ -51,7 +50,6 @@ export class LoginComponent implements OnInit{
       //   this.router.navigate(["/shop/admin"])
       // }else if (resp.json()[0].authority == "f"){
       //   localStorage.setItem('userIsCustomer', "true");
-      this.authenticated = true;
       this.router.navigateByUrl('/home');
     }, err => {
         this.warn();

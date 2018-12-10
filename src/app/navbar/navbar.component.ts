@@ -8,25 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-<<<<<<< HEAD
-  authenticated;
-  error=false;
-
-  constructor(private router: Router, private app: AppService) {
-   }
-
-  ngOnInit() {
-    this.authenticated = localStorage.getItem('authenticated');
-    console.log(this.authenticated);
-    this.ifAuthenticated();
-=======
-  authenticated = true;
   constructor(private router: Router, private app: AppService) { }
   ifAuthenticate: string;
 
   ngOnInit(): void {
     this.ifAuthenticate = localStorage.getItem('authenticated');
->>>>>>> f0c253b4128d2464acb86d98b1ad6a81150346da
   }
 
 
@@ -34,17 +20,6 @@ export class NavbarComponent implements OnInit {
     localStorage.clear();
     localStorage.setItem('authenticated', "false");
     this.router.navigateByUrl('/login');
+    location.reload();
   }
-
-<<<<<<< HEAD
-  ifAuthenticated() {
-    this.authenticated = this.error; 
-  }
-
-}
-
-
-=======
->>>>>>> f0c253b4128d2464acb86d98b1ad6a81150346da
-
 }

@@ -20,7 +20,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignupInstructorsComponent } from './signup-instructors/signup-instructors.component';
 import { PasswordValidation } from './password-validation';
-import { AlertModule} from 'ngx-bootstrap/alert';
+import { AlertModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
