@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+<<<<<<< HEAD
   authenticated;
   error=false;
 
@@ -18,7 +19,16 @@ export class NavbarComponent implements OnInit {
     this.authenticated = localStorage.getItem('authenticated');
     console.log(this.authenticated);
     this.ifAuthenticated();
+=======
+  authenticated = true;
+  constructor(private router: Router, private app: AppService) { }
+  ifAuthenticate: string;
+
+  ngOnInit(): void {
+    this.ifAuthenticate = localStorage.getItem('authenticated');
+>>>>>>> f0c253b4128d2464acb86d98b1ad6a81150346da
   }
+
 
   logout() {
     localStorage.clear();
@@ -26,6 +36,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
+<<<<<<< HEAD
   ifAuthenticated() {
     this.authenticated = this.error; 
   }
@@ -33,5 +44,7 @@ export class NavbarComponent implements OnInit {
 }
 
 
+=======
+>>>>>>> f0c253b4128d2464acb86d98b1ad6a81150346da
 
 }

@@ -9,21 +9,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 
 export class HomeComponent implements OnInit{
-
-  authenticated;
-  
-  ngOnInit(): void {
-    console.log(localStorage.getItem('authenticated'));
-  }
-
   title = 'E-Learning-Platform';
   greeting = {};
-
+  ifAuthenticate = localStorage.getItem('authenticated');
+  
+  ngOnInit(): void {
+    // throw new Error("Method not implemented.");
+  }
   
   constructor(private app: AppService, private http: HttpClient) {
+    // http.get('http://localhost:8082/resource').subscribe(data => this.greeting = data);
   }
 
-  authenticate() {
-    this.authenticated = localStorage.getItem('authenticated');
-  }
 }
