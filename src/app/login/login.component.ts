@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit{
       //   this.router.navigate(["/shop/admin"])
       // }else if (resp.json()[0].authority == "f"){
       //   localStorage.setItem('userIsCustomer', "true");
+      location.reload();
       this.router.navigateByUrl('/home');
     }, err => {
         this.warn();

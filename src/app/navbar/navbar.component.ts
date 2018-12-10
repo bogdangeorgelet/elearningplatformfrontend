@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
   logout() {
     localStorage.clear();
     localStorage.setItem('authenticated', "false");
-    this.router.navigateByUrl('/login');
     location.reload();
+    this.router.navigateByUrl('/login');
   }
 }
