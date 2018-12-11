@@ -44,9 +44,9 @@
           <li class="nav-item" >
             <a class="nav-link" href="#" *ngIf="ifAuthenticate=='false'" routerLink="login">Log In</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#" routerLink="register">Sign Up</a>
-          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="#" *ngIf="ifAuthenticate=='false'"  routerLink="register">Sign Up</a>
+          </li>
           <li class="nav-item" >
             <a class="nav-link"  *ngIf="ifAuthenticate=='true'"  style="cursor:pointer" (click)="logout()">Log Out</a>
           </li>
