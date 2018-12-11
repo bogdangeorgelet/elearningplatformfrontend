@@ -6,8 +6,6 @@ import { Auth } from './auth';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 
-// TODO: dupa ce e logat, sa apara logout, iar daca nu e logat, sa pun si register
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -50,7 +48,7 @@ export class LoginComponent implements OnInit{
       //   this.router.navigate(["/shop/admin"])
       // }else if (resp.json()[0].authority == "f"){
       //   localStorage.setItem('userIsCustomer', "true");
-      location.reload();
+      this.refresh();
       this.router.navigateByUrl('/home');
     }, err => {
         this.warn();

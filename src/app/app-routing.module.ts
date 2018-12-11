@@ -50,8 +50,8 @@ const routes: Routes = [
         component: ForgotPasswordComponent
     },
     {
-      path: 'register',
-      component: SignUpComponent
+        path: 'register',
+        component: SignUpComponent
     },
     {
         path: 'signup-instructors',

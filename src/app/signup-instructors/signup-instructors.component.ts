@@ -12,6 +12,7 @@ import { PasswordValidation } from '../password-validation';
   styleUrls: ['./signup-instructors.component.css']
 })
 export class SignupInstructorsComponent implements OnInit {
+  
   private hostUrl = 'http://localhost:8082/registerInstructor';
   instructor;
   registerInstructor = { id: '', firstName: '', lastName: '', email: '', username: '', password: '', confirmPassword: '' };
