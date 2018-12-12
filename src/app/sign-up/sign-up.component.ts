@@ -19,10 +19,10 @@ export class SignUpComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    // const url = 'http://localhost:8082/registerUser';
-    // this.http.get(url).subscribe(data => {
-    //   this.user = data;
-    // });
+    const url = 'http://localhost:8082/registerUser';
+    this.http.get(url).subscribe(data => {
+      this.user = data;
+    });
   }
 
   onSubmit() {
