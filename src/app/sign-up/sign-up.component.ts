@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'register',
@@ -16,7 +17,7 @@ export class SignUpComponent implements OnInit {
   errorMessage;
   showSuccessMessage = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     const url = 'http://localhost:8082/registerUser';
@@ -32,6 +33,7 @@ export class SignUpComponent implements OnInit {
     this.http.post(url, body).subscribe(data => {
       this.closeModal();
       this.refreshList();
+      this.router.navigateByUrl("/home");
     },
       err => {
         this.showSuccessMessage = false;

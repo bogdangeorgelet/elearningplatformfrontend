@@ -44,3 +44,7 @@ form.register-form {
 .form-check input.form-check-input {
   cursor: pointer;
 }
+
+.alert {
+  margin: 0.75rem 0.75rem;
+}
