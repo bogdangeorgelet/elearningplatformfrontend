@@ -10,12 +10,12 @@
       <input type="text" class="form-control input-firstname" id="firstName" name="firstName" minlength="3"
         required placeholder="First Name" aria-describedby="firstName" [(ngModel)]="registerUser.firstName" #firstName="ngModel">
     </div>
-    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched) && registerForm.valid" class="alert alert-danger">
       <div *ngIf="firstName.errors.required">
-        Firstname is required
+        Firstname is required!
       </div>
       <div *ngIf="firstName.errors.minlength">
-        Firstname must be at least 3 characters long.
+        Firstname is too short!
       </div>
     </div>
   </div>
@@ -28,10 +28,10 @@
     </div>
     <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
       <div *ngIf="lastName.errors.required">
-        Lastname is required
+        Lastname is required!
       </div>
       <div *ngIf="lastName.errors.minlength">
-        Lastname must be at least 3 characters long.
+        Lastname is too short!
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@
           Email is required
         </div>
         <div *ngIf="email.errors.minlength">
-          Email must be at least 4 characters long.
+          Email must be longer!
         </div>
         <div *ngIf="email.errors.pattern">
           Please provide a valid email address.
@@ -78,7 +78,7 @@
         validateEqual="password" #confirmPassword="ngModel" />    
     </div>
     <div class="alert alert-danger" style="font-size: 1rem;" [hidden]="confirmPassword.valid || confirmPassword.pristine">
-        Password mismatch
+        Password mismatch!
     </div>
   </div>
 
