@@ -33,7 +33,8 @@ export class LoginComponent implements OnInit{
 
     this.auth = form.value as Auth;
 
-    localStorage.setItem('Authorization', JSON.stringify('Basic ' + btoa(this.auth.username + ':' + this.auth.password)));
+    localStorage.setItem('Authorization', JSON.stringify('Basic ' + btoa(this.auth.username + ':' 
+      + this.auth.password)));
 
     localStorage.setItem('authenticated', 'false');
 
@@ -43,20 +44,15 @@ export class LoginComponent implements OnInit{
       localStorage.setItem('authenticated', "true");
       localStorage.setItem("username", this.auth.username);
       localStorage.setItem("password", this.auth.password);
-      // if (resp.json().authority == "t") {
-      //   localStorage.setItem('userIsAdmin', "true");
-      //   this.router.navigate(["/shop/admin"])
-      // }else if (resp.json()[0].authority == "f"){
-      //   localStorage.setItem('userIsCustomer', "true");
       this.refresh();
       this.router.navigateByUrl('/home');
     }, err => {
         this.warn();
-      localStorage.removeItem('authenticated');
-      localStorage.removeItem('userIsAdmin');
-      localStorage.removeItem('userIsCustomer');
-      localStorage.removeItem('username');
-      localStorage.removeItem('password');
+        localStorage.removeItem('authenticated');
+        localStorage.removeItem('userIsAdmin');
+        localStorage.removeItem('userIsCustomer');
+        localStorage.removeItem('username');
+        localStorage.removeItem('password');
     });
   }
 
