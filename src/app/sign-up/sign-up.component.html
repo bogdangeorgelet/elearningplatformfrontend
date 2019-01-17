@@ -10,7 +10,7 @@
       <input type="text" class="form-control input-firstname" id="firstName" name="firstName" minlength="3"
         required placeholder="First Name" aria-describedby="firstName" [(ngModel)]="registerUser.firstName" #firstName="ngModel">
     </div>
-    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched) && registerForm.submitted" class="alert alert-danger">
+    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
       <div *ngIf="firstName.errors.required">
         Firstname is required!
       </div>

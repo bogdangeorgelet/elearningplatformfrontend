@@ -160,8 +160,9 @@
 
     </div>
   </div>
-  <div class="more-courses-content">
-    <button type="button" class="btn btn-lg margin-top">View More Courses</button>
+  <div  class="more-courses-content" [@openClose]="isOpen ? 'open' : 'closed'">
+    <button type="button" (click)="toggle()" class="btn btn-lg margin-top open-close-container">View More Courses</button>
+    <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
   </div>
 
   <div class="container-fluid testimonial-container margin-top padding">

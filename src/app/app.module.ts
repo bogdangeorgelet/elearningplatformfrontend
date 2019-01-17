@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SignupInstructorsComponent } from './signup-instructors/signup-instructors.component';
 import { PasswordValidation } from './password-validation';
 import { AlertModule } from 'ngx-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AlertModule } from 'ngx-bootstrap';
 
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
